@@ -82,6 +82,11 @@
 
         // 改成字串
         // 抓出月份
+
+        // navigator.language  當前瀏覽器語言
+        // { month: 'long' }  June
+        // { month: 'short' }  Jun
+        // { month: 'narrow' }  Jun
         let month = date.toLocaleString(navigator.language, { month: 'long' })
         // 抓出星期
         let week = date.toLocaleString(navigator.language, { weekday: 'long' })
