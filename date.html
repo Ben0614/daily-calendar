@@ -1,0 +1,102 @@
+<!DOcTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>calendar</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #ccc;
+        }
+
+        .calendar {
+            position: relative;
+            width: 200px;
+            background-color: rgb(255, 255, 255);
+            text-align: center;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 3px 3px 7px 5px rgb(69, 68, 68);
+        }
+
+        .calendar .year {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            color: rgb(255, 255, 255);
+            font-size: 20px;
+            font-weight: 500;
+            z-index: 1;
+        }
+
+        .calendar .month {
+            position: relative;
+            padding: 10px;
+            background-color: brown;
+            color: rgb(247, 247, 247);
+            font-size: 30px;
+            font-weight: 700;
+        }
+
+        .calendar .day {
+            color: rgb(7, 7, 7);
+            font-size: 100px;
+            font-weight: 800;
+            margin-top: 20px;
+        }
+
+        .calendar .week {
+            color: rgb(103, 103, 103);
+            font-size: 20px;
+            font-weight: 300;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="calendar">
+        <div class="year"></div>
+        <div class="month"></div>
+        <div class="day"></div>
+        <div class="week"></div>
+    </div>
+
+
+    <script>
+        let date = new Date();
+        let year = date.getFullYear();
+        let day = date.getDate();
+
+        // 改成字串
+        // 抓出月份
+        let month = date.toLocaleString(navigator.language, { month: 'long' })
+        // 抓出星期
+        let week = date.toLocaleString(navigator.language, { weekday: 'long' })
+
+
+        document.querySelector('.day').innerHTML = day;
+        document.querySelector('.year').innerHTML = year;
+        document.querySelector('.month').innerHTML = month;
+        document.querySelector('.week').innerHTML = week;
+
+
+
+
+    </script>
+
+</body>
+
+</html>
